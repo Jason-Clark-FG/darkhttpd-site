@@ -11,7 +11,7 @@ docker build --platform linux/amd64 --tag darkhttpd-site .
 ## Run
 
 ```bash
-docker run --platform linux/amd64 --detach -it --rm -p 3000:3000 --name darkhttpd-site darkhttpd-site
+docker run --platform linux/amd64 --detach --interactive --tty --rm --publish 3000:3000 --name darkhttpd-site darkhttpd-site
 ```
 
 ## Background
