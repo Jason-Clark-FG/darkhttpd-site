@@ -23,14 +23,13 @@
         overflow: hidden;
         font-family: "Source Code Pro", monospace;
         font-size: 28px;
-        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.15em;
+        color: rgba(0, 255, 0, 0.7);
         position: absolute;
         right: 10px;
-      }
-      /* Animation */
-      p {
+        /* Animation */
         animation: animated-text 4s steps(17, end) 1s 1 normal both,
-          animated-cursor 600ms steps(17, end) infinite;
+          animated-cursor 600ms steps(17, end) 9;
       }
       /* text animation */
       @keyframes animated-text {
@@ -38,7 +37,7 @@
           width: 0;
         }
         to {
-          width: 300px;
+          width: 100%;
         }
       }
       /* cursor animations */
