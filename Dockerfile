@@ -32,7 +32,7 @@ WORKDIR /var/www/htdocs
 COPY --from=build --chown=0:0 /src/darkhttpd-static /darkhttpd
 COPY --chown=0:0 passwd /etc/passwd
 COPY --chown=0:0 group /etc/group
-COPY --chown=0:0 index.html /var/www/htdocs/index.html
+COPY --chown=0:0 index-typing.html /var/www/htdocs/index.html
 EXPOSE 3000
 ENTRYPOINT ["/darkhttpd"]
 CMD [".", "--chroot", "--port", "3000", "--uid", "nobody", "--gid", "nobody"]
