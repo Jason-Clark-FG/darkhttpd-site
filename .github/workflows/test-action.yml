@@ -1,0 +1,27 @@
+name: "Test: Actions Webhook"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: [self-hosted, Linux, X64]
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
+    steps:
+      # Show Info
+      - name: "Show: Info"
+        run: |
+          echo -e "\nHello World!\n"
+          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+          ls -laR ${GITHUB_WORKSPACE}
+          ls -la ${GITHUB_WORKSPACE}/../
+          ls -la ${GITHUB_WORKSPACE}/../../
+          env | sort
+
