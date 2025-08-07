@@ -28,6 +28,16 @@ RUN make darkhttpd-static \
 
 # Just the static binary
 FROM scratch
+
+# OCI annotations for better package metadata
+LABEL org.opencontainers.image.title="DarkHTTPd Static Site"
+LABEL org.opencontainers.image.description="Lightweight static web server built with DarkHTTPd, serving static content in a minimal container"
+LABEL org.opencontainers.image.vendor="Jason Clark/FG"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.source="https://github.com/jason-clark-fg/darkhttpd-site"
+LABEL org.opencontainers.image.documentation="https://github.com/jason-clark-fg/darkhttpd-site#readme"
+LABEL org.opencontainers.image.url="https://github.com/jason-clark-fg/darkhttpd-site"
+
 WORKDIR /var/www/htdocs
 COPY --from=build --chown=0:0 /src/darkhttpd-static /darkhttpd
 COPY --chown=0:0 passwd /etc/passwd
