@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write  # Required for deleting packages
+      packages: read
     steps:
       - name: Delete old versions
-        uses: actions/delete-package-versions@v4
+        uses: actions/delete-package-versions@v5
         with:
           package-name: 'darkhttpd-site'
           package-type: 'container'
           # min-versions-to-keep: 5
           num-old-versions-to-delete: 1200
-          delete-only-untagged-versions: true  # Safer - keeps tagged releases
+          # delete-only-untagged-versions: true  # Safer - keeps tagged releases
           token: ${{ secrets.GITHUB_TOKEN }}
