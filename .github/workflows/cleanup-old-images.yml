@@ -16,5 +16,5 @@ jobs:
         with:
           package-name: 'darkhttpd-site'
           package-type: 'container'
-          num-old-versions-to-delete: 1200
+          min-versions-to-keep: 10
           token: ${{ secrets.GITHUB_TOKEN }}
