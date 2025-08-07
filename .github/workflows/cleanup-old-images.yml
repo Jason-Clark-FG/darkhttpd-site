@@ -16,5 +16,6 @@ jobs:
           package-name: 'darkhttpd-site'
           package-type: 'container'
           min-versions-to-keep: 5
+          num-old-versions-to-delete: 1200
           delete-only-untagged-versions: true  # Safer - keeps tagged releases
           token: ${{ secrets.GITHUB_TOKEN }}
